@@ -152,6 +152,7 @@ Start-ADSyncSyncCycle -PolicyType Delta
 Assigned Microsoft 365 Business Standard licenses to synchronized users.
 
 
+![IPCONFIG](screenshots/08-m365-license-assignment.png)
 
 ![IPCONFIG](screenshots/09-license-assignment.png)
 
