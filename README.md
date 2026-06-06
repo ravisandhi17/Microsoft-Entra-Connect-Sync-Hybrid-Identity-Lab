@@ -79,7 +79,9 @@ Successfully configured Microsoft Entra Connect Sync using Password Hash Synchro
 
 Screenshot
 
+![IPCONFIG](screenshots/01-entra-connect-management-console.png.png)
 
+![IPCONFIG](screenshots/01-entra-connect-installed.png)
 
 
 ## 2. Synchronized Users in Microsoft Entra ID
@@ -88,6 +90,7 @@ Verified that on-premises Active Directory users were successfully synchronized 
 
 Screenshot
 
+![IPCONFIG](screenshots/02-synced-users.png)
 
 
 
@@ -97,6 +100,7 @@ Validated synchronization status and user identity attributes within Microsoft E
 
 Screenshot
 
+![IPCONFIG](screenshots/03-user-sync-details.png)
 
 
 
@@ -109,6 +113,7 @@ Import-Module ADSync
 Get-ADSyncScheduler
 Screenshot
 
+![IPCONFIG](screenshots/04-adsync-scheduler.png)
 
 
 
@@ -124,6 +129,7 @@ Immutable ID
 Last Synchronization Time
 Screenshot
 
+![IPCONFIG](screenshots/05-user-sync-verification.png)
 
 
 
@@ -138,6 +144,11 @@ SALES_DELL
 Screenshot
 
 
+![IPCONFIG](screenshots/07-ad-users-and-ous-HR-DELL.png)
+
+![IPCONFIG](screenshots/07-ad-users-and-ous-IT-DELL.png)
+
+![IPCONFIG](screenshots/07-ad-users-and-ous-SALES-DELL.png)
 
 
 ## 7. Manual Synchronization
@@ -149,6 +160,7 @@ Import-Module ADSync
 Start-ADSyncSyncCycle -PolicyType Delta
 Screenshot
 
+![IPCONFIG](screenshots/08-manual-sync-success.png)
 
 
 
@@ -158,6 +170,7 @@ Assigned Microsoft 365 Business Standard licenses to synchronized users.
 
 Screenshot
 
+![IPCONFIG](screenshots/09-license-assignment.png)
 
 
 
@@ -168,6 +181,7 @@ Verified access to Microsoft 365 services including Outlook, OneDrive, Word, Exc
 Screenshot
 
 
+![IPCONFIG](screenshots/access-to-apps.png)
 
 
 ## 10. Exchange Online Mail Flow Validation
@@ -178,7 +192,7 @@ Test Performed
 
 Sender:
 
-ITDELLUSER1
+HRDELLUSER2
 
 Recipient:
 
@@ -189,7 +203,9 @@ Result:
 Email Successfully Delivered
 Screenshot
 
+![IPCONFIG](screenshots/10-TEST-EMAIL-2.png)
 
+![IPCONFIG](screenshots/10-TEST-EMAIL-1.png)
 
 
 ## Results
