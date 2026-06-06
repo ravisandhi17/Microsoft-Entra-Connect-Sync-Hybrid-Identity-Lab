@@ -50,26 +50,8 @@ Identity and Access Management (IAM)
 
 ## Lab Architecture
 
-Dell PowerEdge R720
-│
-└── Windows Server 2022 (DC1)
-    ├── Active Directory Domain Services
-    ├── DNS Server
-    ├── Microsoft Entra Connect Sync
-    │
-    └── Synchronization
-          │
-          ▼
-Microsoft Entra ID
-          │
-          ▼
-Microsoft 365
-    ├── Exchange Online
-    ├── Outlook
-    ├── OneDrive
-    ├── Word
-    ├── Excel
-    └── PowerPoint
+![IPCONFIG](screenshots/architecture.png)
+
 
 ## Project Implementation
 
@@ -77,7 +59,7 @@ Microsoft 365
 
 Successfully configured Microsoft Entra Connect Sync using Password Hash Synchronization to synchronize on-premises Active Directory users with Microsoft Entra ID.
 
-Screenshot
+
 
 ![IPCONFIG](screenshots/01-entra-connect-management-console.png.png)
 
@@ -88,7 +70,7 @@ Screenshot
 
 Verified that on-premises Active Directory users were successfully synchronized to Microsoft Entra ID.
 
-Screenshot
+
 
 ![IPCONFIG](screenshots/02-synced-users.png)
 
@@ -98,7 +80,7 @@ Screenshot
 
 Validated synchronization status and user identity attributes within Microsoft Entra ID.
 
-Screenshot
+
 
 ![IPCONFIG](screenshots/03-user-sync-details.png)
 
@@ -109,9 +91,11 @@ Screenshot
 Verified that Microsoft Entra Connect Sync scheduler is configured and automatically performs synchronization every 30 minutes.
 
 PowerShell Command
+
 Import-Module ADSync
+
 Get-ADSyncScheduler
-Screenshot
+
 
 ![IPCONFIG](screenshots/04-adsync-scheduler.png)
 
@@ -121,13 +105,7 @@ Screenshot
 
 Verified that HRDELLUSER2 was synchronized from Active Directory to Microsoft Entra ID.
 
-Validation Points
-On-Premises Sync Enabled
-Distinguished Name
-Domain Name
-Immutable ID
-Last Synchronization Time
-Screenshot
+
 
 ![IPCONFIG](screenshots/05-user-sync-verification.png)
 
@@ -138,10 +116,13 @@ Screenshot
 Verified the Active Directory structure and organizational units containing synchronized users.
 
 Organizational Units
+
 HR_DELL
+
 IT_DELL
+
 SALES_DELL
-Screenshot
+
 
 
 ![IPCONFIG](screenshots/07-ad-users-and-ous-HR-DELL.png)
@@ -156,9 +137,11 @@ Screenshot
 Performed a manual synchronization using PowerShell to immediately replicate Active Directory changes to Microsoft Entra ID.
 
 PowerShell Command
+
 Import-Module ADSync
+
 Start-ADSyncSyncCycle -PolicyType Delta
-Screenshot
+
 
 ![IPCONFIG](screenshots/08-manual-sync-success.png)
 
@@ -168,7 +151,7 @@ Screenshot
 
 Assigned Microsoft 365 Business Standard licenses to synchronized users.
 
-Screenshot
+
 
 ![IPCONFIG](screenshots/09-license-assignment.png)
 
@@ -178,7 +161,7 @@ Screenshot
 
 Verified access to Microsoft 365 services including Outlook, OneDrive, Word, Excel, and PowerPoint after license assignment.
 
-Screenshot
+
 
 
 ![IPCONFIG](screenshots/access-to-apps.png)
@@ -190,18 +173,14 @@ Validated end-to-end email communication through Exchange Online.
 
 Test Performed
 
-Sender:
+Sender: HRDELLUSER2
 
-HRDELLUSER2
-
-Recipient:
-
-user1
+Recipient: user1
 
 Result:
 
 Email Successfully Delivered
-Screenshot
+
 
 ![IPCONFIG](screenshots/10-TEST-EMAIL-2.png)
 
@@ -230,18 +209,7 @@ Tested Exchange Online mail flow
 
 Demonstrated enterprise identity management practices
 
-## PowerShell Commands Used
 
-Verify Scheduler
-Import-Module ADSync
-Get-ADSyncScheduler
-Manual Synchronization
-Import-Module ADSync
-Start-ADSyncSyncCycle -PolicyType Delta
-Verify Active Directory User
-Get-ADUser HRDELLUSER2
-View Active Directory Users
-Get-ADUser -Filter *
 
 ## Author
 
